@@ -1,9 +1,10 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import LearnReact from './LearnReact';
+import '@testing-library/jest-dom/extend-expect';
+import renderWithRedux from '../../utils/renderWithRedux';
+import LearnReact from './LearnReact'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<LearnReact />);
+test('can render with redux with defaults', () => {
+  const { getByText } = renderWithRedux(<LearnReact />)
   const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
-});
+})

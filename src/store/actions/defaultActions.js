@@ -7,6 +7,6 @@ export const getLink = () => dispatch => {
   if (true) {
     dispatch({ type: GET_LINK_SUCCESS, payload: 'Learn React' })
   } else {
-    dispatch({ type: GET_LINK_FAILURE, payload: 'Error'  })
+    dispatch({ type: GET_LINK_FAILURE, payload: 'Unable to get link'  })
   }
 }

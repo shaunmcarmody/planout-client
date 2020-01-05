@@ -1,13 +1,18 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import LearnReact from './views/LearnReact/LearnReact';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getTestVariant } from './store/actions/defaultActions';
 
-function App() {
-  return (
-    <Switch>
-      <Route exact path="/" component={LearnReact} />
-    </Switch>
-  );
+class App extends Component {
+  componentDidMount() {
+    this.props.getTestVariant()
+  }
+
+  render() {
+    return (
+      <div>Hello world</div>
+    )
+  }
+
 }
 
-export default App;
+export default connect(null, { getTestVariant })(App);

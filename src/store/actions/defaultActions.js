@@ -1,12 +1,12 @@
-export const GET_LINK_FAILURE = 'GET_LINK_FAILURE';
-export const GET_LINK_REQUEST = 'GET_LINK_REQUEST';
-export const GET_LINK_SUCCESS = 'GET_LINK_SUCCESS';
+export const GET_TEST_VARIANT_REQUESTS = 'GET_TEST_VARIANT_REQUESTS';
+export const GET_TEST_VARIANT_SUCCESS = 'GET_TEST_VARIANT_SUCCESS';
+export const GET_TEST_VARIANT_FAILURE = 'GET_TEST_VARIANT_FAILURE';
 
-export const getLink = () => dispatch => {
-  dispatch({ type: GET_LINK_REQUEST })
-  if (true) {
-    dispatch({ type: GET_LINK_SUCCESS, payload: 'Learn React' })
-  } else {
-    dispatch({ type: GET_LINK_FAILURE, payload: 'Unable to get link'  })
+export const getTestVariant = () => async dispatch => {
+  try {
+    dispatch({ type: GET_TEST_VARIANT_REQUESTS })
+    dispatch({ type: GET_TEST_VARIANT_SUCCESS, payload: {} })
+  } catch (error) {
+    dispatch({ type: GET_TEST_VARIANT_FAILURE, payload: error.data.message  })
   }
 }
